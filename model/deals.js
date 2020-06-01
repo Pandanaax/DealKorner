@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var dealsSchema = new Schema({
     title: String,
-    urlPhoto : String,
+    urlPhoto : [String],
     description : String, 
     commentaires : commentaires,
     lienRedirection : String,
