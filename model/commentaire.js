@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var comSchema = new Schema({
+var commentaireSchema = new Schema({
     title: String,
     contenu: String,
     dateCommentaire: Date,
@@ -15,4 +15,4 @@ var comSchema = new Schema({
 
 
 
-module.exports = mongoose.model("commentaire", comSchema);
+module.exports = mongoose.model("commentaire", commentaireSchema);
