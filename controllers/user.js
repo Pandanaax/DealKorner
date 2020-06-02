@@ -36,7 +36,7 @@ module.exports = (app) => {
             if (!req.body.email) {
               res.status(401).json({ message: "Impossible de se connecter. Mauvais email." });
             } else if (user) {
-              if (!req.body.motDePasse) {
+              if (!req.body.password) {
                 res.status(401).json({ message: 'Impossible de se connecter. Mauvais mot de passe.' });
               } else {
                 return res.json({token: jwt.sign({ email: user.email, id: user.id}, 'Cacher')});
@@ -44,5 +44,5 @@ module.exports = (app) => {
             }
           });
         };
-    return {getAll,create,createAll,connect}; 
+    return {getAll,create,createAll,connect};
 }
