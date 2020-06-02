@@ -8,7 +8,11 @@ var dealSchema = new Schema({
     description : String, 
     commentaires : commentaires,
     lienRedirection : String,
-    theme : theme,
+    theme : [ {
+        type: Schema.Types.ObjectId,
+        ref: "Theme"
+    },
+    ],
     vote : Interger,
     dateDeal : Date
     
