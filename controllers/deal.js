@@ -21,5 +21,15 @@ module.exports = (app) => {
                 }
             })
         }
-        return { getAll , create }; 
+
+        function update(req, res) {
+            Deal.addCommentaire(req.body.id, function(err, docs){
+                if(err){
+                    res.send(err + "une erreur a été produite");
+                }else{
+                    res.send(docs + "le commentaie à bien été ajouter");
+                }
+            });
+        }    
+        return { getAll , create, update }; 
 };
