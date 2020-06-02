@@ -5,6 +5,7 @@ module.exports = (app) => {
     
     router.post("/create", app.controllers.user.create);
     router.post("/createAll", app.controllers.user.createAll);
+    router.post("/connect", app.controllers.user.connect);
 
     return router;
   };
