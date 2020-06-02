@@ -5,7 +5,9 @@ module.exports = (app) => {
     
     router.post("/create", app.controllers.deal.create);
 
-    router.post("/update", app.controllers.deal.update);
+    router.post("/createAll", app.controllers.deal.createAll);
+
+    router.post("/update", app.controllers.deal.addCommentaire);
 
     return router;
   };

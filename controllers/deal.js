@@ -10,7 +10,19 @@ module.exports = (app) => {
                 }
             }); 
         }
+
     function create(req, res) {
+        const firstDeal = req.body;
+        
+            Deal.create(firstDeal, function(err, firstDeal){
+                if(err){
+                    console.log(err)
+                }else{
+                    res.send(firstDeal);
+                }
+            })
+        }
+    function createAll(req, res) {
         const nouveauDeal = req.body;
         
             Deal.insertMany(nouveauDeal, function(err, nouveauDeal){
@@ -22,8 +34,8 @@ module.exports = (app) => {
             })
         }
 
-        function update(req, res) {
-            Deal.addCommentaire(req.body.id, function(err, docs){
+        function addCommentaire(req, res) {
+            Deal.update(req.body.id, function(err, docs){
                 if(err){
                     res.send(err + "une erreur a été produite");
                 }else{
@@ -31,5 +43,5 @@ module.exports = (app) => {
                 }
             });
         }    
-        return { getAll , create, update }; 
+        return { getAll , create, createAll, addCommentaire }; 
 };
