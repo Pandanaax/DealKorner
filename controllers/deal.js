@@ -10,5 +10,15 @@ module.exports = (app) => {
                 }
             }); 
         }
-        return { getAll  }; 
+    function create(req, res) {
+        const nouveauDeal = req.body;
+            Tag.create(nouveauDeal, function(err, nouveauDeal){
+                if(err){
+                    console.log(err)
+                }else{
+                    res.send(nouveauDeal);
+                }
+            })
+        }
+        return { getAll , create }; 
 };

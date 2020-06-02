@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const theme = app.models.Theme;
+    const theme = app.models.Commentaire;
     
     function getAll(req, res) {
         theme.find({}, function (err, docs) {
@@ -11,7 +11,7 @@ module.exports = (app) => {
             }); 
         }
 
-//RECUPERATION DE L'ID
+//ID DU COMMENTAIRE
 function getById(req, res) {
     let msg = req.body.id;
     theme.findById(msg, function(err,docs) {
@@ -25,7 +25,7 @@ function getById(req, res) {
 }
 
 
-// CREATION D'UN THEME
+// TITRE DU COMMENTAIRE
 function create(req, res) {
     let msg =req.body;
     theme.create(msg, function(err,docs) {
@@ -33,7 +33,7 @@ function create(req, res) {
             console.log(err);
             
         }else{
-            res.send("Le thème a bien été crée");
+            res.send(docs);
         }
     });
 }
