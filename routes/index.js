@@ -4,4 +4,5 @@ module.exports = (app) => {
     })
     
     app.use("/deals", require("./deals")(app));
+    app.use("/users", require("./users")(app));
 };
