@@ -1,6 +1,6 @@
 module.exports = (app) => {
-    const user = app.models.User;
-    
+    const User = app.models.User;
+
     function getAll(req, res) {
         User.find({}, function (err, docs) {
             if(err){
@@ -10,5 +10,5 @@ module.exports = (app) => {
                 }
             }); 
         }
-        return {getAll}; 
+    return {getAll}; 
 };
