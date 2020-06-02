@@ -10,8 +10,6 @@ module.exports = (app) => {
                 }
             }); 
         }
-        return { getAll  }; 
-};
 
 //RECUPERATION DE L'ID
 function getById(req, res) {
@@ -25,4 +23,21 @@ function getById(req, res) {
         }
     });
 }
-return {getById};
+
+
+// CREATION D'UN THEME
+function create(req, res) {
+    let msg =req.body;
+    theme.create(msg, function(err,docs) {
+        if(err){
+            console.log(err);
+            
+        }else{
+            res.send("Le thème a bien été crée");
+        }
+    });
+}
+
+
+return {getAll,getById,create};
+};

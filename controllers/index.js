@@ -3,5 +3,6 @@ module.exports = (app) => {
         theme: require("./theme.js")(app),
         deal: require("./deal")(app),
         user: require("./users")(app),
+        commentaire: require("./commentaire")(app)
     };
 }

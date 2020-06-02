@@ -6,6 +6,7 @@ module.exports = (app) => {
     app.use("/deal", require("./deal")(app));
     app.use("/theme", require("./theme")(app));
     app.use("/user", require("./user")(app));
+    app.use("/commentaire", require("./commentaire")(app));
 };
 
 
