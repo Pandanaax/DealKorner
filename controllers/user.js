@@ -20,5 +20,14 @@ module.exports = (app) => {
                 }
             });
         }
-    return {getAll,create}; 
-};
+    function createAll(req, res){    
+    User.insertMany(req.body, function(err,docs) {
+        if(err){
+            res.send(err);
+        }else{
+            res.send("Les users ont bien été crées");
+        }
+          });
+    }
+    return {getAll,create,createAll}; 
+}
