@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "pseudo": "karl34",
+    "email" : "karl@mail.com",
+    "password": "123456",
+    "urlPhoto" : "http://image.com"
+    
+  },
+  {
+    "id": 2,
+    "pseudo": "nico34",
+    "email" : "nico@mail.com",
+    "password": "123456",
+    "urlPhoto" : "http://image.com"
+    
+  },
+  {
+    "id": 3,
+    "pseudo": "cedric34",
+    "email" : "cedric@mail.com",
+    "password": "123456",
+    "urlPhoto" : "http://image.com"
+    
+  },
+  {
+    "id": 4,
+    "pseudo": "randa34",
+    "email" : "randa@mail.com",
+    "password": "123456",
+    "urlPhoto" : "http://image.com"
+    
+  }
+
+]
