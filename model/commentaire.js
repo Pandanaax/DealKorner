@@ -7,7 +7,11 @@ var comSchema = new Schema({
     title: String,
     contenu: String,
     dateCommentaire: Date,
-    //user: User
+    User: [ {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
+    ]
 });
 
 
