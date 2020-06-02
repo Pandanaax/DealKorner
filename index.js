@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 const mangoose = require("mongoose");
 
+require("./database")(app);
 
 require("./model")(app);
 

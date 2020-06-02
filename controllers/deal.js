@@ -12,7 +12,7 @@ module.exports = (app) => {
         }
     function create(req, res) {
         const nouveauDeal = req.body;
-            Tag.create(nouveauDeal, function(err, nouveauDeal){
+            Deal.createCollection(nouveauDeal, function(err, nouveauDeal){
                 if(err){
                     console.log(err)
                 }else{
