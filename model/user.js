@@ -8,11 +8,11 @@ var userSchema = new Schema({
     email : String,
     password: String,
     urlPhoto : String,
-   /*  dealPoste: [ {
+    dealPoste: [ {
         type: Schema.Types.ObjectId,
         ref: "Deal"
     },
-    ] */
+    ]
     
 });
 
