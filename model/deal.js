@@ -6,7 +6,7 @@ var dealSchema = new Schema({
     title: String,
     urlPhoto : [String],
     description : String, 
-    commentaires : commentaires,
+    // commentaires : commentaires,
     lienRedirection : String,
     theme : [ {
         type: Schema.Types.ObjectId,
