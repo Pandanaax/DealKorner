@@ -30,7 +30,7 @@ function create(req, res) {
     let msg =req.body;
     commentaire.insertMany(msg, function(err,msg) {
         if(err){
-            console.log(err);
+            res.send(err);
             
         }else{
             res.send(msg);

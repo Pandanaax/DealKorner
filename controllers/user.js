@@ -29,5 +29,20 @@ module.exports = (app) => {
         }
           });
     }
-    return {getAll,create,createAll}; 
+
+    function connect(req, res) {
+        User.findOne({email: req.body.email}, function(err, user) {
+            if (err) throw err;
+            if (!req.body.email) {
+              res.status(401).json({ message: "Impossible de se connecter. Mauvais email." });
+            } else if (user) {
+              if (!req.body.motDePasse) {
+                res.status(401).json({ message: 'Impossible de se connecter. Mauvais mot de passe.' });
+              } else {
+                return res.json({token: jwt.sign({ email: user.email, id: user.id}, 'Cacher')});
+              }
+            }
+          });
+        };
+    return {getAll,create,createAll,connect}; 
 }
