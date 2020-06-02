@@ -3,5 +3,5 @@ module.exports = (app) => {
         res.send("hello word");
     })
     
-    app.use("/deals", require("./deals")(app));
+    app.use("/deal", require("./deal")(app));
 };
