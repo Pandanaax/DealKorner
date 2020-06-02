@@ -10,4 +10,4 @@ var themeSchema = new Schema({
 
 
 
-module.exports = mongoose.model("theme", themeSchema);
+module.exports = mongoose.model("Theme", themeSchema);

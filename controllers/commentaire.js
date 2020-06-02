@@ -1,8 +1,8 @@
 module.exports = (app) => {
-    const theme = app.models.Commentaire;
+    const commentaire = app.models.Commentaire;
     
     function getAll(req, res) {
-        theme.find({}, function (err, docs) {
+        commentaire.find({}, function (err, docs) {
             if(err){
                 console.log(err);
                 }else{
@@ -14,7 +14,7 @@ module.exports = (app) => {
 //ID DU COMMENTAIRE
 function getById(req, res) {
     let msg = req.body.id;
-    theme.findById(msg, function(err,docs) {
+    commentaire.findById(msg, function(err,docs) {
         if(err){
             console.log(err);
             
@@ -28,7 +28,7 @@ function getById(req, res) {
 // TITRE DU COMMENTAIRE
 function create(req, res) {
     let msg =req.body;
-    theme.create(msg, function(err,docs) {
+    commentaire.create(msg, function(err,docs) {
         if(err){
             console.log(err);
             

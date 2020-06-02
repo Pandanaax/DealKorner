@@ -25,4 +25,4 @@ var dealSchema = new Schema({
 
 
 
-module.exports = mongoose.model("deal", dealSchema);
+module.exports = mongoose.model("Deal", dealSchema);
