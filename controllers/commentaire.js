@@ -33,53 +33,11 @@ function create(req, res) {
             console.log(err);
             
         }else{
-            res.send("Titre du commentaire");
+            res.send(docs);
         }
     });
 }
 
-//CONTENU DU COMMENTAIRE
-function create(req, res) {
-    let msg = req.body;
-    theme.create(msg, function(err,docs) {
-        if(err){
-            console.log(err);
-            
-        }else{
-            res.send("Contenu du commentaire");
-        }
-    });
-}
-
-
-// DATE DU COMMENTAIRE
-function create(req, res) {
-    let msg =req.body;
-    theme.create(msg, function(err,docs) {
-        if(err){
-            console.log(err);
-            
-        }else{
-            res.send("Date commentaire");
-        }
-    });
-}
-
-
-
-
-// USER QUI A ENVOYE LE COM
-function create(req, res) {
-    let msg =req.body;
-    theme.create(msg, function(err,docs) {
-        if(err){
-            console.log(err);
-            
-        }else{
-            res.send("User");
-        }
-    });
-}
 
 return {getAll,getById,create};
 };
