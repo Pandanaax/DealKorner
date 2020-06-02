@@ -26,7 +26,7 @@ function getById(req, res) {
 
 
 // TITRE DU COMMENTAIRE
-function createTitre(req, res) {
+function create(req, res) {
     let msg =req.body;
     commentaire.insertMany(msg, function(err,msg) {
         if(err){
@@ -38,19 +38,5 @@ function createTitre(req, res) {
     });
 }
 
-// CONTENU DU COMMENTAIRE
-function createCommentaire(req, res) {
-    let msg =req.body;
-    commentaire.insertMany(msg, function(err,msg) {
-        if(err){
-            console.log(err);
-            
-        }else{
-            res.send(msg);
-        }
-    });
-}
-
-
-return {getAll,getById,createTitre,createCommentaire};
+return {getAll,getById,create};
 };
