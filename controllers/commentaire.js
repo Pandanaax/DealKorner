@@ -26,9 +26,22 @@ function getById(req, res) {
 
 
 // TITRE DU COMMENTAIRE
-function create(req, res) {
+function createTitre(req, res) {
     let msg =req.body;
-    commentaire.create(msg, function(err,docs) {
+    commentaire.insertMany(msg, function(err,docs) {
+        if(err){
+            console.log(err);
+            
+        }else{
+            res.send(docs);
+        }
+    });
+}
+
+// CONTENU DU COMMENTAIRE
+function createCommentaire(req, res) {
+    let msg =req.body;
+    commentaire.insertMany(msg, function(err,docs) {
         if(err){
             console.log(err);
             
@@ -39,5 +52,5 @@ function create(req, res) {
 }
 
 
-return {getAll,getById,create};
+return {getAll,getById,createTitre,createCommentaire};
 };

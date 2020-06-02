@@ -10,6 +10,7 @@ module.exports = (app) => {
                 }
             }); 
         }
+        
     function create(req, res) {
         const nouveauDeal = req.body;
         
@@ -21,5 +22,5 @@ module.exports = (app) => {
                 }
             })
         }
-        return { getAll , create }; 
+        return { getAll , create };
 };
