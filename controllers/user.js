@@ -1,5 +1,6 @@
 module.exports = (app) => {
     const User = app.models.User;
+    const jwt = require('jsonwebtoken');
 
     function getAll(req, res) {
         User.find({}, function (err, docs) {
@@ -31,8 +32,9 @@ module.exports = (app) => {
     }
 
     function connect(req, res) {
-        User.findOne({email: req.body.email}, function(err, user) {
-            if (err) throw err;
+        User.findOne(req.body, function(err, user) {
+            if(err){
+                res.send(err + "une erreur a été produite");}
             if (!req.body.email) {
               res.status(401).json({ message: "Impossible de se connecter. Mauvais email." });
             } else if (user) {
