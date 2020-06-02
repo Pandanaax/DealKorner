@@ -38,21 +38,31 @@ module.exports = (app) => {
             if(err){
                 res.send(err + "une erreur a été produite");
             }else{
-                res.send(docs + "le commentaie à bien été ajouter");
+                res.send(docs + "le commentaire à bien été ajouter");
             }
         });
     }    
 
-    function voteDeal(req,res) {
-        Deal.updateOne(req.body.id,{ $inc: {vote : 1}}), function(err,vote){
+    function incVoteDeal(req,res) {
+        Deal.update({"_id":req.body.id},{ $inc: {vote : 1}}, function(err,vote){
         if(err){
             res.send(err + "une erreur a été produite");
         }else{
             res.send(vote + "le vote à bien été ajouter");
         }
-    }
-}    
+    })
+}
 
-        return { getAll , create, createAll, addCommentaire, voteDeal }; 
+    function decVoteDeal(req,res) {
+        Deal.update({"_id":req.body.id},{ $inc: {vote : -1}}, function(err,vote){
+         if(err){
+            res.send(err + "une erreur a été produite");
+         }else{
+            res.send(vote + "le vote à bien été ajouter");
+        }
+    })
+}
+
+        return { getAll , create, createAll, addCommentaire, incVoteDeal, decVoteDeal }; 
 
 };

@@ -9,7 +9,9 @@ module.exports = (app) => {
 
     router.post("/update", app.controllers.deal.addCommentaire);
     
-    router.post("/updateOne", app.controllers.deal.voteDeal);
+    router.post("/updateIncVote", app.controllers.deal.incVoteDeal);
+
+    router.post("/updateDecVote", app.controllers.deal.decVoteDeal);
 
     return router;
   };
