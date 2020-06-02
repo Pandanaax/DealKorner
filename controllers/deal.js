@@ -11,14 +11,14 @@ module.exports = (app) => {
             }); 
         }
     function create(req, res) {
-        const nouveauDeal = req.body;
+        const premierDeal = req.body;
         const deuxiemeDeal = req.body;
         const troisiemeDeal = req.body
-            Deal.create(nouveauDeal,deuxiemeDeal,troisiemeDeal, function(err, nouveauDeal, deuxiemeDeal, troisiemeDeal){
+            Deal.create(premierDeal,deuxiemeDeal,troisiemeDeal, function(err, nouveauDeal, deuxiemeDeal, troisiemeDeal){
                 if(err){
                     console.log(err)
                 }else{
-                    res.send(nouveauDeal, deuxiemeDeal, troisiemeDeal);
+                    res.send(premierDeal, deuxiemeDeal, troisiemeDeal);
                 }
             })
         }
