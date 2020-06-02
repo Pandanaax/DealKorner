@@ -1,8 +1,8 @@
 module.exports = (app) => {
-    const Deals = app.models.Deals;
+    const Deal = app.models.Deal;
     
     function getAll(req, res) {
-        Deals.find({}, function (err, docs) {
+        Deal.find({}, function (err, docs) {
             if(err){
                 console.log(err);
                 }else{
