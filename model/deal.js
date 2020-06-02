@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var dealsSchema = new Schema({
+var dealSchema = new Schema({
     title: String,
     urlPhoto : [String],
     description : String, 
@@ -17,4 +17,4 @@ var dealsSchema = new Schema({
 
 
 
-module.exports = mongoose.model("deals", dealsSchema);
+module.exports = mongoose.model("deal", dealSchema);
