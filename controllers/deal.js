@@ -12,11 +12,13 @@ module.exports = (app) => {
         }
     function create(req, res) {
         const nouveauDeal = req.body;
-            Deal.createCollection(nouveauDeal, function(err, nouveauDeal){
+        const deuxiemeDeal = req.body;
+        const troisiemeDeal = req.body
+            Deal.create(nouveauDeal, function(err, nouveauDeal, deuxiemeDeal, troisiemeDeal){
                 if(err){
                     console.log(err)
                 }else{
-                    res.send(nouveauDeal);
+                    res.send(nouveauDeal, deuxiemeDeal, troisiemeDeal);
                 }
             })
         }
