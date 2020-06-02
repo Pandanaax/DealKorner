@@ -10,5 +10,15 @@ module.exports = (app) => {
                 }
             }); 
         }
-    return {getAll}; 
+    function create(req, res) {
+        let newUser =req.body;
+            User.create(newUser, function(err,docs) {
+                if(err){
+                    res.send(err);
+                }else{
+                    res.send("Le user a bien été crée");
+                }
+            });
+        }
+    return {getAll,create}; 
 };
