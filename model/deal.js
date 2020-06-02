@@ -17,8 +17,9 @@ var dealSchema = new Schema({
         ref: "Theme"
     },
     ],
-    vote : Number,
+    vote : 0,
     dateDeal : Date
+        
     
     
 });

@@ -43,6 +43,16 @@ module.exports = (app) => {
         });
     }    
 
-        return { getAll , create, createAll, addCommentaire }; 
+    function voteDeal(req,res) {
+        Deal.updateOne(req.body.id,{ $inc: {vote : 1}}), function(err,vote){
+        if(err){
+            res.send(err + "une erreur a été produite");
+        }else{
+            res.send(vote + "le vote à bien été ajouter");
+        }
+    }
+}    
+
+        return { getAll , create, createAll, addCommentaire, voteDeal }; 
 
 };
