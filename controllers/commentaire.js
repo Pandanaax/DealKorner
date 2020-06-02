@@ -28,12 +28,12 @@ function getById(req, res) {
 // TITRE DU COMMENTAIRE
 function createTitre(req, res) {
     let msg =req.body;
-    commentaire.insertMany(msg, function(err,docs) {
+    commentaire.insertMany(msg, function(err,msg) {
         if(err){
             console.log(err);
             
         }else{
-            res.send(docs);
+            res.send(msg);
         }
     });
 }
@@ -41,12 +41,12 @@ function createTitre(req, res) {
 // CONTENU DU COMMENTAIRE
 function createCommentaire(req, res) {
     let msg =req.body;
-    commentaire.insertMany(msg, function(err,docs) {
+    commentaire.insertMany(msg, function(err,msg) {
         if(err){
             console.log(err);
             
         }else{
-            res.send(docs);
+            res.send(msg);
         }
     });
 }
