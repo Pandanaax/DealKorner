@@ -5,11 +5,12 @@ module.exports = (app) => {
         Deal.find({}, function (err, docs) {
             if(err){
                 console.log(err);
-                }else{
-                    res.send(docs)
+            }else{
+                res.send(docs)
                 }
-            }); 
+            }).sort({dateDeal: 'desc'}); 
         }
+
     function create(req, res) {
         const firstDeal = req.body;
         
