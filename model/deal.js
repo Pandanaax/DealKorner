@@ -8,7 +8,7 @@ var dealSchema = new Schema({
     description : String, 
     commentaires : [ {
         type: Schema.Types.ObjectId,
-        ref: "commentaire"
+        ref: "Commentaire"
     },
     ],
     lienRedirection : String,

@@ -13,5 +13,7 @@ module.exports = (app) => {
 
     router.post("/updateDecVote", app.controllers.deal.decVoteDeal);
 
+    router.post("/getByTheme", app.controllers.deal.getByTheme);
+
     return router;
   };

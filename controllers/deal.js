@@ -11,6 +11,16 @@ module.exports = (app) => {
             }).sort({dateDeal: 'desc'}); 
         }
 
+    function getByTheme(req,res){
+        Deal.find({theme:req.body.id},function(err,docs){
+            if(err){
+                res.send('une erreur est survenue !!')
+            }else{
+                res.send(docs)
+            }
+        })
+    }    
+
     function create(req, res) {
         const firstDeal = req.body;
         
@@ -42,7 +52,7 @@ module.exports = (app) => {
                 res.send(docs + "le commentaire à bien été ajouter");
             }
         });
-    }    
+    }
 
     function incVoteDeal(req,res) {
         Deal.update({"_id":req.body.id},{ $inc: {vote : 1}}, function(err,vote){
@@ -64,6 +74,6 @@ module.exports = (app) => {
     })
 }
 
-        return { getAll , create, createAll, addCommentaire, incVoteDeal, decVoteDeal }; 
+        return { getAll , create, createAll, addCommentaire, incVoteDeal, decVoteDeal,getByTheme }; 
 
 };

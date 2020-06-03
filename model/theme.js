@@ -4,8 +4,6 @@ var Schema = mongoose.Schema;
 
 var themeSchema = new Schema({
     nom : String,
-    
-    
 });
 
 
