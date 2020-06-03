@@ -11,7 +11,6 @@ module.exports = (app) => {
             }); 
         }
 
-//RECUPERATION DE L'ID
 function getById(req, res) {
     let msg = req.body.id;
     theme.findById(msg, function(err,docs) {
@@ -24,8 +23,6 @@ function getById(req, res) {
     });
 }
 
-
-// CREATION D'UN THEME
 function create(req, res) {
     let msg =req.body;
     theme.create(msg, function(err,docs) {

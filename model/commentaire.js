@@ -6,7 +6,7 @@ var commentaireSchema = new Schema({
     title: String,
     contenu: String,
     dateCommentaire: Date,
-    User: [ {
+    user: [ {
         type: Schema.Types.ObjectId,
         ref: "User"
     },

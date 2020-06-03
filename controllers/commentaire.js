@@ -25,7 +25,6 @@ function getById(req, res) {
 }
 
 
-// TITRE DU COMMENTAIRE
 function create(req, res) {
     let msg =req.body;
     commentaire.insertMany(msg, function(err,msg) {

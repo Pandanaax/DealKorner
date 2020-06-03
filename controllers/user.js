@@ -71,7 +71,7 @@ module.exports = (app) => {
                                     res.json({
                                         token: jwt.sign({
                                             email: user.email,
-                                            //id: user.id
+
                                         }, 'Cacher')
                                     });
                                 } else {
