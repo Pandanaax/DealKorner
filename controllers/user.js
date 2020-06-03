@@ -32,17 +32,17 @@ module.exports = (app) => {
     }
 
     function connect(req, res) {
-        User.findOne(req.body.em, function(err, user) {
-            if(err){
-                res.send(err + "une erreur a été produite");}
-            if (!req.body.email) {
-              res.status(401).json({ err: "Impossible de se connecter. Mauvais email." });
-            } else if (user) {
-              if (!req.body.password) {
-                res.status(401).json({ err: 'Impossible de se connecter. Mauvais mot de passe.' });
+        User.findOne({email: req.body.email}, function(err,user) {
+            if(!user){
+                res.status(401).json({ message: "Impossible de se connecter. Mauvais email." }) }
+                else{
+            if (user) {
+              if (req.body.password !== user.password) {
+                res.status(401).json({ message: 'Impossible de se connecter. Mauvais mot de passe.'});
               } else {
                 return res.json({token: jwt.sign({ email: user.email, id: user.id}, 'Cacher')});
               }
+             }
             }
           });
         };
