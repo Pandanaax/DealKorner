@@ -46,5 +46,6 @@ module.exports = (app) => {
             }
           });
         };
+        
     return {getAll,create,createAll,connect};
 }
